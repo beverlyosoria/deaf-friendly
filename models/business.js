@@ -1,7 +1,14 @@
 var mongoose = require("mongoose");
-var Schema = mongoose.Schema;
 
 var businessSchema = new mongoose.Schema({
-  name: String,
-  location: String //temporary
+  name: {
+    type: String,
+    required: true
+  },
+  location: {
+    type: String, //temporary
+    required: true
+  }
 });
+
+module.exports = mongoose.model("Business", businessSchema);

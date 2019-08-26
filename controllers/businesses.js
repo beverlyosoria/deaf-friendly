@@ -6,7 +6,14 @@ module.exports = {
   show
 };
 
-function index(req, res) {
+
+
+
+function index(req, res,) {
+  Business.find({}, function(err, business) {
+    res.render("businesses/index", { title: "All", business });
+
+
   User.findById(req.params.id, function(err, user) {
     res.render("businesses/index", {
       user: req.user,
@@ -17,7 +24,7 @@ function index(req, res) {
 
 function show(req, res) {
   Business.findById(req.params.id);
-  res.render("business/show"),
+  res.render("businesses/show"),
     {
       title: "Detail",
       business
