@@ -6,18 +6,14 @@ module.exports = {
   show
 };
 
-
-
-
-function index(req, res,) {
-  Business.find({}, function(err, business) {
-    res.render("businesses/index", { title: "All", business });
-
-
+function index(req, res) {
   User.findById(req.params.id, function(err, user) {
-    res.render("businesses/index", {
-      user: req.user,
-      name: req.query.name
+    Business.find({}, function(err, business) {
+      res.render("businesses/index", {
+        business,
+        user: req.user,
+        name: req.query.name
+      });
     });
   });
 }
