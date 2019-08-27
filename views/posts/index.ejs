@@ -41,24 +41,5 @@
         </div>
       </nav>
     </div>
-
-    <table id="list">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Location</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <% business.forEach(function(b) { %>
-        <tr>
-          <td><%= b.name %></td>
-          <td><%= b.location %></td>
-          <td><a href="/businesses/<%= b._id %>">Details</a></td>
-        </tr>
-        <% }); %>
-      </tbody>
-    </table>
   </body>
 </html>

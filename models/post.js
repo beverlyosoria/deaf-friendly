@@ -1,6 +1,6 @@
 var mongoose = require("mongoose");
 
-var businessSchema = new mongoose.Schema({
+var postSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true
@@ -11,4 +11,4 @@ var businessSchema = new mongoose.Schema({
   }
 });
 
-module.exports = mongoose.model("Business", businessSchema);
+module.exports = mongoose.model("Post", postSchema);
