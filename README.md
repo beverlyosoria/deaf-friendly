@@ -74,7 +74,7 @@ As a user, I can edit or delete my review.
 HTML, CSS, Javascript, Express, Node.js, MongoDB, Mongoose, Heroku
 
 ## Stretch Goals
-
+Change number rating to star rating
 
 ## Next Steps
 
