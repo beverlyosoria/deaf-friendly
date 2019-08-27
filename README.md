@@ -1,6 +1,6 @@
 # Title
 
-[title here]()
+[Search It](https://deaf-friendly.herokuapp.com/businesses)
 
 ## Overview
 
@@ -17,16 +17,31 @@
 ## Pseudocode
 1. Set up Oauth verification 
 
-2.  Set up models with business, review, and user schema.
+2.  Set up models with user, post, and review schema.
 
 3. Assign properties within schemas. 
-	Business properties include:
-	Review properties include:
+
 	User properties include:
+	
+		Name
+    	Email
+    	Avatar
+    	Google ID
+	
+	Post properties include:
+	
+		Name
+		Location
+		Review
+	
+	Review properties include:
+	
 
 4. Require models in routes. 
 
-5. Set routes to pull existing business locations from API(?), show existing reviews, create new review, edit and delete review.
+5. Create index view, controller and routes. 
+
+6. Show posts, create and add new post.
 
 6. Set routes to get post put edit and delete.  
 
@@ -38,11 +53,13 @@
 
 ## User Stories
 
-As a user, I can log in via a third-party provider. 
+As a user, I can log in via Google authentication. 
 
-As a user, I can search for any existing business by name and location. 
+As a user, I can create a post for any existing business and identify it by name and location.
 
-As a user, I can read reviews left by previous users, concerning deaf-friendly accomadations at any given business.
+As a user, I can find existing posts, left by previous users, for the business I am interested in.
+
+As a user, I can read reviews left by previous users.
 
 As a user, I can rate the business from a scale of one to five stars. 
 

@@ -9,12 +9,9 @@ module.exports = {
 };
 
 function show(req, res) {
-  Post.findById(req.params.id);
-  res.render("posts/show"),
-    {
-      title: "Detail",
-      post
-    };
+  Post.findById(req.params.id, function(err, post) {
+    res.render("posts/show", { title: "Detail", post });
+  });
 }
 
 function create(req, res) {
