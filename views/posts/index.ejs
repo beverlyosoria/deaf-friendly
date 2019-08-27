@@ -41,5 +41,24 @@
         </div>
       </nav>
     </div>
+    <table id="list">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Location</th>
+          <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% post.forEach(function(p) { %>
+        <tr>
+          <td><%= p.name %></td>
+          <td><%= p.location %></td>
+          <td><a href="/posts/<%= p._id %>">Details</a></td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+    <button><a href="/posts/new"> New Post</a></button>
   </body>
 </html>

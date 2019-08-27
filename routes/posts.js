@@ -4,6 +4,6 @@ var postsCtrl = require("../controllers/posts");
 
 /* GET users listing. */
 router.get("/", postsCtrl.index);
+router.get("/new", postsCtrl.new);
 router.get("/:id", postsCtrl.show);
-
 module.exports = router;
