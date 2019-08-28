@@ -15,18 +15,20 @@ function show(req, res) {
 }
 
 function create(req, res) {
-  var post = new Post(req.body);
-  post.save(function(err) {
-    if (err) return res.redirect("/posts/new");
-    console.log(post);
-    res.redirect("/posts");
+  User.findById(req.session.passport.user, function(err, user) {
+    var post = new Post(req.body);
+    post.user.push(user);
+    post.save(function(err) {
+      if (err) return res.redirect("/posts/new");
+      console.log(post);
+      res.redirect("/posts");
+    });
   });
 }
 
 function newPost(req, res) {
   res.render("posts/new", { title: "Add Post" });
 }
-
 function index(req, res) {
   User.findById(req.params.id, function(err, user) {
     Post.find({}, function(err, post) {

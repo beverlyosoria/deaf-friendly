@@ -8,7 +8,6 @@ module.exports = {
 
 function delReview(req, res) {
   Post.findOne({ "reviews._id": req.params.id }, function(err, post) {
-    console.log(req.params.id);
     post.reviews.id(req.params.id).remove();
     post.save(function(err) {
       if (err) console.log(err);

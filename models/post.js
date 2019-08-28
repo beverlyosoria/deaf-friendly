@@ -30,7 +30,8 @@ var postSchema = new Schema({
     required: true
   },
   reviews: [reviewSchema],
-  user: [{ type: Schema.Types.ObjectId, ref: "User" }]
+  user: []
+  // [{ type: Schema.Types.ObjectId, ref: "User" }]
 });
 
 module.exports = mongoose.model("Post", postSchema);
