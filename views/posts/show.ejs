@@ -20,7 +20,7 @@
       method="POST"
       action="/posts/<%= post._id %>/reviews"
     >
-      <label>Review:</label>
+      <label>Experience:</label>
       <textarea name="content"></textarea>
       <label>Rating:</label>
       <select name="rating">
@@ -31,8 +31,51 @@
         <option value="5">5</option>
       </select>
       <label>Skills</label>
-      <input type="checkbox" name="skills" value="Positive Attitude" />Positive
-      Attitude <br />
+      <input type="checkbox" name="skills" value="Positive Attitude" />
+      Positive Attitude <br />
+      <input type="checkbox" name="skills" value=" Patience" /> Patience <br />
+      <input type="checkbox" name="skills" value=" Makes Eye Contact" /> Makes
+      Eye Contact <br />
+      <input type="checkbox" name="skills" value=" Speaks Clearly" />Speaks
+      Clearly<br />
+      <input
+        type="checkbox"
+        name="skills"
+        value=" Pen and Paper Available"
+      />Pen and Paper Available<br />
+      <input
+        type="checkbox"
+        name="skills"
+        value=" Willingness to Gesture"
+      />Willingness to Gesture<br />
+      <input type="checkbox" name="skills" value=" Knows Sign Language" />Knows
+      Sign Language<br />
+      <input
+        type="checkbox"
+        name="skills"
+        value=" Displays Subtitles/Captions"
+      />Displays Subtitles/Captions<br />
+      <input
+        type="checkbox"
+        name="skills"
+        value=" Schedule/Order On-line"
+      />Schedule/Order On-line<br />
+      <input
+        type="checkbox"
+        name="skills"
+        value=" Assisted Listening Devices"
+      />Assisted Listening Devices<br />
+      <input
+        type="checkbox"
+        name="skills"
+        value=" Accepts Relay Calls"
+      />Accepts Relay Calls<br />
+      <input
+        type="checkbox"
+        name="skills"
+        value=" Experience Hiring Interpreter"
+      />Experience Hiring Interpreter<br />
+
       <input type="submit" value="Add Review" />
     </form>
 
@@ -53,6 +96,19 @@
           <td><%= r.content %></td>
           <td><%= r.rating %></td>
           <td><%= r.skills %></td>
+          <td>
+            <form
+              action="/posts/<%= r._id %>/reviews?_method=DELETE"
+              method="POST"
+            >
+              <button
+                class="waves-effect waves-light btn-floating scale-transition red right"
+                type="submit"
+              >
+                X
+              </button>
+            </form>
+          </td>
         </tr>
         <% }); %>
       </tbody>
