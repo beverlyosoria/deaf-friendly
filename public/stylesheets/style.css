@@ -1,8 +1,24 @@
+nav {
+  background-color: #fef9c7;
+}
+.brand-logo {
+  color: #e88557;
+}
+
 body {
+  background-color: #026670;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
+th {
+  background-color: #fce181;
+  color: #026670;
+}
+td {
+  background-color: #fce181;
+  color: #026670;
+}
 
 a {
-  color: #00B7FF;
+  color: #e88557;
 }

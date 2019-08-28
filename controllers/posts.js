@@ -9,8 +9,10 @@ module.exports = {
 };
 
 function show(req, res) {
-  Post.findById(req.params.id, function(err, post) {
-    res.render("posts/show", { title: "Detail", post });
+  User.findById(req.session.passport.user, function(err, user) {
+    Post.findById(req.params.id, function(err, post) {
+      res.render("posts/show", { title: "Detail", post, user });
+    });
   });
 }
 
