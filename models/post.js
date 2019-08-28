@@ -16,6 +16,9 @@ var reviewSchema = new Schema(
     ]
   },
   {
+    user: []
+  },
+  {
     timestamps: true
   }
 );

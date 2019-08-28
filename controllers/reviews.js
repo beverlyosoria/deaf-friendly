@@ -17,10 +17,13 @@ function delReview(req, res) {
 }
 
 function create(req, res) {
-  Post.findById(req.params.id, function(err, post) {
-    post.reviews.push(req.body);
-    post.save(function(err) {
-      res.redirect(`/posts/${post._id}`);
+  User.findById(req.session.passport.user, function(err, user) {
+    Post.findById(req.params.id, function(err, post) {
+      post.review.user.push(user);
+      post.reviews.push(req.body);
+      post.save(function(err) {
+        res.redirect(`/posts/${post._id}`);
+      });
     });
   });
 }
