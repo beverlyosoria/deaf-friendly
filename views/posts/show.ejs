@@ -17,64 +17,81 @@
   <textarea name="content"></textarea>
   <label>User</label>
   <input type="text" name="user" value="<%= user %>" />
-  <label>Rating:</label>
+  <label>
+    Rating:
+</label>
+<label>
+  <span>
   <select name="rating">
     <option value="1">1</option>
     <option value="2">2</option>
     <option value="3">3</option>
     <option value="4">4</option>
     <option value="5">5</option>
+  </span>
   </select>
-  <label>Skills</label>
-  <input type="checkbox" name="skills" value="Positive Attitude" />
-  Positive Attitude <br />
-  <input type="checkbox" name="skills" value=" Patience" /> Patience <br />
-  <input type="checkbox" name="skills" value=" Makes Eye Contact" /> Makes Eye
-  Contact <br />
-  <input type="checkbox" name="skills" value=" Speaks Clearly" />Speaks
-  Clearly<br />
-  <input type="checkbox" name="skills" value=" Pen and Paper Available" />Pen
-  and Paper Available<br />
-  <input
-    type="checkbox"
-    name="skills"
-    value=" Willingness to Gesture"
-  />Willingness to Gesture<br />
-  <input type="checkbox" name="skills" value=" Knows Sign Language" />Knows Sign
-  Language<br />
-  <input
-    type="checkbox"
-    name="skills"
-    value=" Displays Subtitles/Captions"
-  />Displays Subtitles/Captions<br />
-  <input
-    type="checkbox"
-    name="skills"
-    value=" Schedule/Order On-line"
-  />Schedule/Order On-line<br />
-  <input
-    type="checkbox"
-    name="skills"
-    value=" Assisted Listening Devices"
-  />Assisted Listening Devices<br />
-  <input type="checkbox" name="skills" value=" Accepts Relay Calls" />Accepts
-  Relay Calls<br />
-  <input
-    type="checkbox"
-    name="skills"
-    value=" Experience Hiring Interpreter"
-  />Experience Hiring Interpreter<br />
+</label>
+  <p><label>Skills</label></p>
 
-  <input type="submit" value="Add Review" />
+  <br />
+  <label>
+    <input type="checkbox" name="skills" value="Positive Attitude" />
+    <span>Positive Attitude</span> <br />
+  </label>
+  <label>
+    <input type="checkbox" name="skills" value="Patience" />
+    <span>Patience</span><br />
+  </label>
+  <label>
+    <input type="checkbox" name="skills" value="Makes Eye Contact" />
+    <span> Makes Eye Contact</span> <br />
+  </label>
+  <label>
+    <input type="checkbox" name="skills" value="Speaks Clearly" />
+    <span>Speaks Clearly</span><br />
+  </label>
+  <label>
+    <input type="checkbox" name="skills" value="Pen and Paper Available" />
+    <span>Pen and Paper Available</span><br />
+  </label>
+  <label>
+    <input type="checkbox" name="skills" value="Willingness to Gesture" />
+    <span>Willingness to Gesture</span><br />
+  </label>
+  <label>
+    <input type="checkbox" name="skills" value="Knows Sign Language" />
+    <span>Knows Sign Language</span><br />
+  </label>
+  <label>
+    <input type="checkbox" name="skills" value="Displays Subtitles/Captions" />
+    <span>Displays Subtitles/Captions</span><br />
+  </label>
+  <label>
+    <input type="checkbox" name="skills" value="Schedule/Order On-line" />
+    <span>Schedule/Order On-line</span><br />
+  </label>
+  <label>
+    <input type="checkbox" name="skills" value="Assisted Listening Devices" />
+    <span>Assisted Listening Devices</span><br />
+  </label>
+  <label>
+    <input type="checkbox" name="skills" value="Accepts Relay Calls" />
+    <span>Accepts Relay Calls</span><br />
+  </label>
+  <label>
+    <input type="checkbox" name="skills" value="Experience Hiring Interpreter" />
+    <span>Experience Hiring Interpreter</span><br />
+  </label>
+  <input type="submit" value="Add Review" value="" />
 </form>
 
 <% if (post.reviews.length) { %>
 <table>
   <thead>
     <tr>
-      <th>Date</th>
-      <th>Review</th>
+      <th>Experience</th>
       <th>Rating</th>
+      <th>Skills</th>
       <th>User</th>
     </tr>
   </thead>

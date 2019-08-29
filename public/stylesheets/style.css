@@ -4,19 +4,14 @@ nav {
   width: 1190px;
 }
 
-#logo {
-  height: 85px;
-  width: 350px;
-}
-
-.card {
-  width: 380px;
-}
-
 body {
   background-color: #626e60;
   padding: 38px;
   font: 14px "Raleway", sans-serif;
+}
+
+h2 {
+  font-size: 30px;
 }
 
 a {
@@ -27,4 +22,18 @@ a {
   background-image: url("../images/background.png");
   height: 400px;
   width: 1190px;
+}
+
+#logo {
+  height: 85px;
+  width: 350px;
+}
+
+#checkbox {
+  height: 20px;
+  width: 20px;
+}
+
+.card {
+  width: 380px;
 }
