@@ -1,0 +1,18 @@
+<%- include('../partials/header') %>
+
+<h2>Edit</h2>
+<form action="/posts/<%= post._id %>?_method=PUT" method="POST">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" value="<%= post.name %>" />
+  <br />
+  <label for="location">Location:</label>
+  <input
+    type="text"
+    id="location"
+    name="location"
+    value="<%= post.location %>"
+  />
+  <input type="submit" value="Update" />
+</form>
+
+<%- include('../partials/footer') %>

@@ -15,6 +15,8 @@
 >
   <label>Experience:</label>
   <textarea name="content"></textarea>
+  <label>User</label>
+  <input type="text" name="user" value="<%= user %>" />
   <label>Rating:</label>
   <select name="rating">
     <option value="1">1</option>
@@ -80,11 +82,11 @@
     <% var total = 0 %> <% post.reviews.forEach(function(r) { %> <% total +=
     r.rating %>
     <tr>
-      <td><%= r.createdAt.toLocaleDateString() %></td>
       <td><%= r.content %></td>
       <td><%= r.rating %></td>
       <td><%= r.skills %></td>
-      <td><%= r.user[0].name %></td>
+      <td><%= r.user[0]%></td>
+
       <td>
         <form action="/posts/<%= r._id %>/reviews?_method=DELETE" method="POST">
           <button type="submit">

@@ -5,8 +5,26 @@ module.exports = {
   index,
   new: newPost,
   create,
-  show
+  show,
+  edit,
+  update
 };
+
+function update(req, res) {
+  Post.findByIdAndUpdate(req.params.id, req.body, function(err, post) {
+    post.save(function(err) {
+      res.redirect("/posts");
+    });
+  });
+}
+
+function edit(req, res) {
+  User.findById(req.session.passport.user, function(err, user) {
+    Post.findById(req.params.id, function(err, post) {
+      res.render("posts/edit", { post, user });
+    });
+  });
+}
 
 function show(req, res) {
   User.findById(req.session.passport.user, function(err, user) {
