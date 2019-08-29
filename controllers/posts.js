@@ -29,8 +29,11 @@ function create(req, res) {
 }
 
 function newPost(req, res) {
-  res.render("posts/new", { title: "Add Post" });
+  User.findById(req.session.passport.user, function(err, user) {
+    res.render("posts/new", { title: "Add Post", user });
+  });
 }
+
 function index(req, res) {
   User.findById(req.params.id, function(err, user) {
     Post.find({}, function(err, post) {

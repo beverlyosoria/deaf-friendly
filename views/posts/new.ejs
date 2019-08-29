@@ -1,21 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-    <title>Document</title>
-  </head>
-  <body>
-    <h2>Add a new business</h2>
-    <form action="/posts" method="POST">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" />
-      <br />
-      <label for="location">Location:</label>
-      <input type="text" id="location" name="location" />
-      <input type="submit" value="Add" />
-    </form>
-  </body>
-</html>
+<%- include('../partials/header') %>
+
+<h2>Add a new business</h2>
+<form action="/posts" method="POST">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" />
+  <br />
+  <label for="location">Location:</label>
+  <input type="text" id="location" name="location" />
+  <input type="submit" value="Add" />
+</form>
+
+<%- include('../partials/footer') %>
