@@ -6,7 +6,7 @@
     A place where you can search for deaf-friendly businesses in your area or
     share your experience.
   </p>
-  <p>The aim is to promote deaf-friendliness in your area.</p>
+  <p>The aim is to promote deaf-friendliness in your community.</p>
 
   <input
     type="text"
@@ -14,8 +14,15 @@
     placeholder="Business search..."
     autocomplete="off"
   />
-  <input type="submit" value="Search" />
+
+  <input id="submit" type="submit" value="Search" />
 </div>
+
+<section id="button">
+  <button id="new">
+    <a class="black-text" href="/posts/new"> New Post</a>
+  </button>
+</section>
 <div class="row">
   <% post.forEach(function(p) { %>
   <div class="col s4">
@@ -23,9 +30,7 @@
       <div class="col s2 m6">
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
-            <span class="card-title">Business</span>
-            <p><%= p.name %></p>
-            <p><%= p.name %></p>
+            <span class="card-title"><p><%= p.name %></p></span>
             <p><%= p.location %></p>
             <p><a href="/posts/<%= p._id %>">Details</a></p>
             <p><%= p.user[0].name %></p>
@@ -37,7 +42,5 @@
   </div>
   <% }); %>
 </div>
-
-<button><a href="/posts/new"> New Post</a></button>
 
 <%- include('../partials/footer') %>

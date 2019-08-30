@@ -7,21 +7,78 @@ nav {
 body {
   background-color: #626e60;
   padding: 38px;
-  font: 14px "Raleway", sans-serif;
-}
-
-h2 {
-  font-size: 30px;
+  font: 18px "Raleway", sans-serif;
 }
 
 a {
   color: #e88557;
+}
+h3 {
+  font-size: 25px;
+  color: #e88557;
+}
+
+h2 {
+  font-size: 35px;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+th {
+  padding-top: 0;
+  margin-top: 0;
+}
+#comments {
+  font-size: 25px;
+  color: #e88557;
+}
+#rating {
+  font-size: 25px;
+  color: #e88557;
+}
+#skills {
+  font-size: 25px;
+  color: #e88557;
+}
+
+#add {
+  background-color: #26a59a;
+  border-radius: 5px;
+}
+#delete {
+  background-color: #cc5751;
+  border-radius: 5px;
+}
+#new {
+  background-color: #26a59a;
+  border-radius: 5px;
+  float: right;
+}
+#submit {
+  background-color: #f7bc70;
+  border-radius: 5px;
+}
+#update {
+  background-color: #26a59a;
+  border-radius: 5px;
+}
+#button {
+  margin: 10px;
+  height: 20px;
+}
+#name {
+  font-size: 18px;
+}
+#location {
+  font-size: 18px;
 }
 
 #welcome {
   background-image: url("../images/background.png");
   height: 400px;
   width: 1190px;
+  padding: 2px 0 0 15px;
+  margin-top: 20px;
 }
 
 #logo {
@@ -29,9 +86,26 @@ a {
   width: 350px;
 }
 
-#checkbox {
-  height: 20px;
-  width: 20px;
+#show-post {
+  height: 210px;
+  width: 500px;
+  padding: 30px;
+  margin-bottom: 40px;
+  font-size: 20px;
+}
+
+#show-review {
+  padding-bottom: 30px;
+  margin-bottom: 40px;
+}
+
+#show-form {
+  margin-top: 30px;
+}
+
+#reviews {
+  height: 300px;
+  width: 600px;
 }
 
 .card {

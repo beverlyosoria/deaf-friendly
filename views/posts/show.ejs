@@ -1,121 +1,142 @@
 <%- include('../partials/header') %>
 
-<section id="show-page">
-  <div>Name:</div>
-  <div><%= post.name %></div>
-  <div>Location:</div>
-  <div><%= post.location %></div>
+<section id="show-post">
+  <div>
+    <h3>Name:</h3>
+    <%= post.name %>
+  </div>
+  <div>
+    <h3>Location:</h3>
+    <%= post.location %>
+  </div>
 </section>
 
-<h2>Reviews</h2>
-<form
-  id="add-review-form"
-  method="POST"
-  action="/posts/<%= post._id %>/reviews"
->
-  <label>Experience:</label>
-  <textarea name="content"></textarea>
-  <label>User</label>
-  <input type="text" name="user" value="<%= user %>" />
-  <label>
-    Rating:
-</label>
-<label>
-  <span>
-  <select name="rating">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-  </span>
-  </select>
-</label>
-  <p><label>Skills</label></p>
+<hr />
+<section id="show-review">
+  <% if (post.reviews.length) { %>
+  <table>
+    <thead>
+      <tr>
+        <th><h3>Comments</h3></th>
+        <th><h3>Rating</h3></th>
+        <th><h3>Skills</h3></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% var total = 0 %> <% post.reviews.forEach(function(r) { %> <% total +=
+      r.rating %>
+      <tr>
+        <td><%= r.content %></td>
+        <td><%= r.rating %></td>
+        <td><%= r.skills %></td>
 
+        <td>
+          <form
+            action="/posts/<%= r._id %>/reviews?_method=DELETE"
+            method="POST"
+          >
+            <button id="delete" type="submit">
+              Delete
+            </button>
+          </form>
+        </td>
+        <td></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+
+  <% } else { %>
+  <h5>No Reviews Yet</h5>
+  <% } %>
+</section>
+<hr />
+
+<section id="show-form">
+  <h2>Leave a Review Here</h2>
   <br />
-  <label>
-    <input type="checkbox" name="skills" value="Positive Attitude" />
-    <span>Positive Attitude</span> <br />
-  </label>
-  <label>
-    <input type="checkbox" name="skills" value="Patience" />
-    <span>Patience</span><br />
-  </label>
-  <label>
-    <input type="checkbox" name="skills" value="Makes Eye Contact" />
-    <span> Makes Eye Contact</span> <br />
-  </label>
-  <label>
-    <input type="checkbox" name="skills" value="Speaks Clearly" />
-    <span>Speaks Clearly</span><br />
-  </label>
-  <label>
-    <input type="checkbox" name="skills" value="Pen and Paper Available" />
-    <span>Pen and Paper Available</span><br />
-  </label>
-  <label>
-    <input type="checkbox" name="skills" value="Willingness to Gesture" />
-    <span>Willingness to Gesture</span><br />
-  </label>
-  <label>
-    <input type="checkbox" name="skills" value="Knows Sign Language" />
-    <span>Knows Sign Language</span><br />
-  </label>
-  <label>
-    <input type="checkbox" name="skills" value="Displays Subtitles/Captions" />
-    <span>Displays Subtitles/Captions</span><br />
-  </label>
-  <label>
-    <input type="checkbox" name="skills" value="Schedule/Order On-line" />
-    <span>Schedule/Order On-line</span><br />
-  </label>
-  <label>
-    <input type="checkbox" name="skills" value="Assisted Listening Devices" />
-    <span>Assisted Listening Devices</span><br />
-  </label>
-  <label>
-    <input type="checkbox" name="skills" value="Accepts Relay Calls" />
-    <span>Accepts Relay Calls</span><br />
-  </label>
-  <label>
-    <input type="checkbox" name="skills" value="Experience Hiring Interpreter" />
-    <span>Experience Hiring Interpreter</span><br />
-  </label>
-  <input type="submit" value="Add Review" value="" />
-</form>
+  <form
+    id="add-review-form"
+    method="POST"
+    action="/posts/<%= post._id %>/reviews"
+  >
+    <label id="comments">Comments:</label>
+    <textarea name="content"></textarea>
 
-<% if (post.reviews.length) { %>
-<table>
-  <thead>
-    <tr>
-      <th>Experience</th>
-      <th>Rating</th>
-      <th>Skills</th>
-      <th>User</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% var total = 0 %> <% post.reviews.forEach(function(r) { %> <% total +=
-    r.rating %>
-    <tr>
-      <td><%= r.content %></td>
-      <td><%= r.rating %></td>
-      <td><%= r.skills %></td>
-      <td><%= r.user[0]%></td>
+    <label id="rating">
+      Rating:
+    </label>
+    <div id="dropDown" class="input-field">
+      <select name="rating">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+    <p>
+      <label id="skills">Skills</label>
+    </p>
 
-      <td>
-        <form action="/posts/<%= r._id %>/reviews?_method=DELETE" method="POST">
-          <button type="submit">
-            Delete
-          </button>
-        </form>
-      </td>
-    </tr>
-    <% }); %>
-  </tbody>
-</table>
-
-<% } else { %>
-<h5>No Reviews Yet</h5>
-<% } %> <%- include('../partials/footer') %>
+    <label>
+      <input type="checkbox" name="skills" value="Positive Attitude" />
+      <span>Positive Attitude</span> <br />
+    </label>
+    <label>
+      <input type="checkbox" name="skills" value="Patience" />
+      <span>Patience</span><br />
+    </label>
+    <label>
+      <input type="checkbox" name="skills" value="Makes Eye Contact" />
+      <span> Makes Eye Contact</span> <br />
+    </label>
+    <label>
+      <input type="checkbox" name="skills" value="Speaks Clearly" />
+      <span>Speaks Clearly</span><br />
+    </label>
+    <label>
+      <input type="checkbox" name="skills" value="Pen and Paper Available" />
+      <span>Pen and Paper Available</span><br />
+    </label>
+    <label>
+      <input type="checkbox" name="skills" value="Willingness to Gesture" />
+      <span>Willingness to Gesture</span><br />
+    </label>
+    <label>
+      <input type="checkbox" name="skills" value="Knows Sign Language" />
+      <span>Knows Sign Language</span><br />
+    </label>
+    <label>
+      <input
+        type="checkbox"
+        name="skills"
+        value="Displays Subtitles/Captions"
+      />
+      <span>Displays Subtitles/Captions</span><br />
+    </label>
+    <label>
+      <input type="checkbox" name="skills" value="Schedule/Order On-line" />
+      <span>Schedule/Order On-line</span><br />
+    </label>
+    <label>
+      <input type="checkbox" name="skills" value="Assisted Listening Devices" />
+      <span>Assisted Listening Devices</span><br />
+    </label>
+    <label>
+      <input type="checkbox" name="skills" value="Accepts Relay Calls" />
+      <span>Accepts Relay Calls</span><br />
+    </label>
+    <label>
+      <input
+        type="checkbox"
+        name="skills"
+        value="Experience Hiring Interpreter"
+      />
+      <span>Experience Hiring Interpreter</span><br />
+    </label>
+    <br />
+    <input id="add" type="submit" value="Add Review" />
+  </form>
+</section>
+<%- include('../partials/footer') %>
