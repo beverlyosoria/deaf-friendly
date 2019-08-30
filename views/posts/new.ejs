@@ -1,13 +1,13 @@
 <%- include('../partials/header') %>
 
-<h2>Add a new business</h2>
+<h3>Add a new business</h3>
 <form action="/posts" method="POST">
-  <label for="name">Name:</label>
+  <label id="name" for="name">Name:</label>
   <input type="text" id="name" name="name" />
   <br />
-  <label for="location">Location:</label>
+  <label id="location" for="location">Location:</label>
   <input type="text" id="location" name="location" />
-  <input type="submit" value="Add" />
+  <input id="add" type="submit" value="Add" />
 </form>
 
 <%- include('../partials/footer') %>
