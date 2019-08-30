@@ -10,17 +10,17 @@ The aim is to promote deaf-friendliness in your community via awareness and feed
 
 ## Wireframe
 
-![image description](../master/images/wireframe.jpg)
+![image description](../master/public/images/wireframe.jpg)
 
 ## Screenshots
 
-![image description](../master/images/home.jpg)
+![image description](../master/public/images/home.jpg)
 
-![image description](../master/images/business.jpg)
+![image description](../master/public/images/business.jpg)
 
-![image description](../master/images/reviews.jpg)
+![image description](../master/public/images/reviews.jpg)
 
-![image description](../master/images/form.jpg)
+![image description](../master/public/images/form.jpg)
 
 
 ## Pseudocode
