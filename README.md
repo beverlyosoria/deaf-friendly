@@ -1,6 +1,6 @@
 # Title
 
-[Search It](https://deaf-friendly.herokuapp.com/businesses)
+[Search It](https://deaf-friendly.herokuapp.com/posts)
 
 ## Overview
  A place where you can search for deaf-friendly businesses in your area or share your consumer experience and insights as deaf, deafblind, and hard of hearing individuals, friends/family of the deaf and those with a special interest in creating a deaf-friendly world.
