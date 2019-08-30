@@ -3,6 +3,9 @@
 [Search It](https://deaf-friendly.herokuapp.com/businesses)
 
 ## Overview
+ A place where you can search for deaf-friendly businesses in your area or share your consumer experience and insights as deaf, deafblind, and hard of hearing individuals, friends/family of the deaf and those with a special interest in creating a deaf-friendly world.
+  
+The aim is to promote deaf-friendliness in your community via awareness and feedback.
 
 
 ## Wireframe
@@ -11,7 +14,13 @@
 
 ## Screenshots
 
-![image description](../master/images/1.jpg)
+![image description](../master/images/home.jpg)
+
+![image description](../master/images/business.jpg)
+
+![image description](../master/images/reviews.jpg)
+
+![image description](../master/images/form.jpg)
 
 
 ## Pseudocode
@@ -45,7 +54,7 @@
 
 6. Set routes to get post put edit and delete.  
 
-7. Set controller to render index. Set controller to render new. Set controller to post new to index. Set controller to get show. Set controller to create post. Set controller to render request from api.
+7. Set controller to render index. Set controller to render new. Set controller to post new to index. Set controller to get show. Set controller to create post. 
 
 8. Set route to delete selected id. Set controller to delete selected id.
 
@@ -71,10 +80,16 @@ As a user, I can edit or delete my review.
 
 
 ## Technologies Used
-HTML, CSS, Javascript, Express, Node.js, MongoDB, Mongoose, Heroku
+HTML, CSS, Javascript, Express, Node.js, MongoDB, Mongoose, Materialize, Heroku
 
 ## Stretch Goals
+
 Change number rating to star rating
+
+Authorization
 
 ## Next Steps
 
+Implement Google Maps API
+
+Implement search feature
