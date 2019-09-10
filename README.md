@@ -7,6 +7,8 @@
   
 The aim is to promote deaf-friendliness in your community via awareness and feedback.
 
+## Entity Relationship Diagram
+![image description](../master/public/images/erd.jpg)
 
 ## Wireframe
 
